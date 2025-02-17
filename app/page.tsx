@@ -4,11 +4,12 @@ import { Button } from '@/components/ui/button';
 import { Laptop, Mail, Instagram, Linkedin, Github } from 'lucide-react';
 import Link from 'next/link';
 import Image from 'next/image';
-import hero from '../public/hero.jpg';
-import ghumti from '../public/ghumti.png'
 import Head from 'next/head';
 import { Navbar } from '@/components/navbar';
 import logo from '../public/logo1.jpg'
+import hero from '../public/hero1.jpg';
+import ghumti from '../public/ghumti.png'
+import college from '../public/college.jpg'
 
 export default function Home() {
   const projects = [
@@ -27,11 +28,11 @@ export default function Home() {
       website: "https://fourleaf-website.vercel.app/",
     },
     {
-      title: "Digital Agency Platform",
-      description: "A comprehensive platform for digital agencies to manage clients and projects",
-      tech: ["React", "Firebase", "Material-UI", "WebSocket"],
-      image: "",
-      website: "https://agency-platform.com",
+      title: "Nepali Common App",
+      description: "A comprehensive platform for students to apply to Colleges and Universities in Nepal",
+      tech: ["React", "Firebase"],
+      image: college,
+      website: "https://github.com/apurbaaaa/Nepali-Common-App",
     },
   ];
   const skills = [
@@ -129,7 +130,7 @@ export default function Home() {
     </section>
 
       {/* About Section */}
-      <section className="bg-muted py-20">
+      <section className="bg-muted py-20" id='aboutme'>
         <div className="max-w-4xl mx-auto px-4 text-center">
           <h2 className="text-3xl font-bold mb-8">About Me</h2>
           <p className="text-lg mb-8">
