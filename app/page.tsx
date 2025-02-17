@@ -18,6 +18,7 @@ export default function Home() {
   return (
     <>
     <Head>
+      <link rel="icon" href="/ic.ico" />
       <title>Aaryan Shrestha - Full Stack Developer</title>
       <meta name="description" content="Portfolio of Aaryan Shrestha, a Full Stack Developer specializing in React, Node.js, and modern web technologies." />
       <meta name="keywords" content="Full Stack Developer, React, Node.js, JavaScript, Portfolio" />
