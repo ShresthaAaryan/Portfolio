@@ -1,10 +1,12 @@
 'use client';
 
 import { useState, useEffect } from 'react';
+import Image from 'next/image';
 import Link from 'next/link';
 import { Moon, Sun, Menu, X } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { useTheme } from 'next-themes';
+import mine from '../public/mine.png'
 
 export function Navbar() {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -41,7 +43,14 @@ export function Navbar() {
             href="/"
             className="text-xl font-bold hover:text-primary transition-colors"
           >
-            Portfolio
+            <Image
+              src={mine}
+              alt="Hero background"
+              className="object-cover"
+              height={100}
+              width={120}
+              priority
+            />
           </Link>
 
           {/* Desktop Navigation */}

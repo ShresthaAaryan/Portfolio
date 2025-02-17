@@ -36,7 +36,7 @@ export default function Home() {
         <div className="absolute inset-0 bg-black/50" />
         <div className="absolute inset-0 flex flex-col items-center justify-center text-white">
           <Laptop className="w-16 h-16 mb-6" />
-          <h1 className="text-6xl font-bold mb-4">Aaryan Shrestha</h1>
+          <h1 className="text-6xl font-bold mb-4 text-center">Aaryan Shrestha</h1>
           <p className="text-xl mb-8">Full Stack Developer</p>
           <Link href='#projects'>
             <Button variant="outline" className="text-white bg-transparent hover:bg-white/20">
