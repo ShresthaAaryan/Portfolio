@@ -21,18 +21,19 @@ export function Navbar() {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
-  const navLinks = [
-    { href: '#projects', label: 'Projects' },
-    { href: '#aboutme', label: 'About Me' },
-    { href: '#skills', label: 'Skills' },
-    { href: '#contact', label: 'Contact' },
+  const navLinks = [    
+    { href: '/#education', label: 'Education' },
+    { href: '/#skills', label: 'Skills' },
+    { href: '/#projects', label: 'Projects' },
+    { href: '/ #contact', label: 'Contact' },
+
   ];
 
   return (
     <nav
-      className={`fixed top-0 w-full z-50 transition-all duration-300 ${
+      className={`fixed top-0 w-full z-50 transition-all duration-300 shadow-xl ${
         isScrolled
-          ? 'bg-background/80 backdrop-blur-md border-b'
+          ? 'bg-background/80 backdrop-blur-sm border-b'
           : 'bg-transparent'
       }`}
     >
@@ -54,12 +55,12 @@ export function Navbar() {
           </Link>
 
           {/* Desktop Navigation */}
-          <div className="hidden md:flex items-center gap-8">
+          <div className="hidden md:flex text-black dark:text-white text-xl font-bold font-mono items-center gap-8">
             {navLinks.map((link) => (
               <Link
                 key={link.href}
                 href={link.href}
-                className="text-muted-foreground hover:text-primary transition-colors"
+                className="hover:text-teal-700 transition-colors"
               >
                 {link.label}
               </Link>

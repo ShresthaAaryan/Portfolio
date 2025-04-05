@@ -1,9 +1,8 @@
 'use client';
 
 import { Button } from '@/components/ui/button';
-import { Laptop } from 'lucide-react';
+import { DownloadIcon, Laptop } from 'lucide-react';
 import Image from 'next/image';
-import Link from 'next/link';
 import Head from 'next/head';
 import { Navbar } from '@/components/navbar';
 import hero from '../public/hero1.jpg';
@@ -12,8 +11,10 @@ import Skills from '@/components/skill';
 import About from '@/components/about';
 import Contacts from '@/components/contact';
 import Footer from '@/components/footer';
-export default function Home() {
+import Education from '@/components/education';
+import { DownloadCloudIcon } from 'lucide-react';
 
+export default function Home() {
 
   return (
     <>
@@ -26,7 +27,7 @@ export default function Home() {
     </Head>
     <main className="min-h-screen">
       <Navbar/>
-      <section className="relative h-screen">
+      <section className="relative h-screen shadow-xl">
         <Image
           src={hero}
           alt="Hero background"
@@ -39,22 +40,25 @@ export default function Home() {
           <Laptop className="w-16 h-16 mb-6" />
           <h1 className="text-6xl font-bold mb-4 text-center">Aaryan Shrestha</h1>
           <p className="text-xl mb-8">Full Stack Developer</p>
-          <Link href='#projects'>
-            <Button variant="outline" className="text-white bg-transparent hover:bg-white/20">
-              View Projects
+          <a href='/resume.pdf' download='resume.pdf'>
+            <Button variant="outline" className="text-white bg-transparent hover:bg-white/20 ">
+              <DownloadIcon className='mr-5'/>Download Resume
             </Button>
-          </Link>
+          </a>
         </div>
       </section>
 
-      {/* Project Section */}
-      <Project/>
-
       {/* About Section */}
       <About/>
+      
+      {/* Education Section */}
+      <Education/>
 
       {/* Skills Section */}
       <Skills/>
+
+      {/* Project Section */}
+      <Project/>
 
       {/* Contact Section */}
       <Contacts/>
