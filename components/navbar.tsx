@@ -42,7 +42,7 @@ export function Navbar() {
           {/* Logo/Name */}
           <Link
             href="/"
-            className="text-xl font-bold hover:text-primary transition-colors"
+            className="text-xl hover:text-primary transition-colors"
           >
             <Image
               src={mine}
@@ -55,7 +55,7 @@ export function Navbar() {
           </Link>
 
           {/* Desktop Navigation */}
-          <div className="hidden md:flex text-black dark:text-white text-xl font-bold font-mono items-center gap-8">
+          <div className="hidden md:flex text-black dark:text-white text-xl font-sans font-medium items-center gap-8">
             {navLinks.map((link) => (
               <Link
                 key={link.href}
