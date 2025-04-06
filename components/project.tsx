@@ -140,7 +140,7 @@ const Project = () => {
                 <h3 className="font-display text-xl font-bold text-gray-800 dark:text-white mb-2">
                   {project.title}
                 </h3>
-                
+
                 <p className="text-gray-600 dark:text-gray-300 text-sm mb-4 flex-grow">
                   {project.description}
                 </p>

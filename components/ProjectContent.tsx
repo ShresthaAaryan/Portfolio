@@ -4,6 +4,7 @@ import { motion, AnimatePresence } from 'framer-motion';
 import Image from 'next/image';
 import { useState, useEffect, useCallback } from 'react';
 import { Github, Globe } from 'lucide-react';
+import Link from 'next/link';
 
 interface ProjectImage {
     src: string;
@@ -72,7 +73,7 @@ export default function ProjectContent({
                 <h1 className="text-4xl font-bold">{title}</h1>
                 
                 <div className="flex items-center space-x-4">
-                    {githubUrl && (
+                {githubUrl && (
                         <motion.a
                             href={githubUrl}
                             target="_blank"
@@ -99,6 +100,10 @@ export default function ProjectContent({
                             <span className="font-medium">Visit Website</span>
                         </motion.a>
                     )}
+                    <Link href="/#projects" className="text-bnlack-600 hover:text-blue-800 transition-colors duration-300">
+                        ← Back to Home
+                    </Link>
+
                 </div>
             </motion.div>
 
