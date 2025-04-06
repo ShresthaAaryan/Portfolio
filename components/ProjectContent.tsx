@@ -100,7 +100,7 @@ export default function ProjectContent({
                             <span className="font-medium">Visit Website</span>
                         </motion.a>
                     )}
-                    <Link href="/#projects" className="text-bnlack-600 hover:text-blue-800 transition-colors duration-300">
+                    <Link href="/#projects" className="font-bold  hover:text-teal-700 transition-colors duration-300">
                         ← Back to Home
                     </Link>
 
