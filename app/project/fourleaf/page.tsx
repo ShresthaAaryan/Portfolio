@@ -14,8 +14,8 @@ export default function FourleafPage() {
         <>
             <Navbar /><br /><br />
             <ProjectContent
-                title="Fourleaf - Digital Marketing Platform"
-                overview="Fourleaf is a powerful digital marketing platform that helps businesses optimize their online presence, track marketing performance, and make data-driven decisions."
+                title="Fourleaf Clover Pvt. Ltd."
+                overview="Fourleaf is a modern webpage for a marketing company"
                 features={[
                     "Responsive design",
                     "SEO friendly Website",
