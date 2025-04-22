@@ -14,7 +14,7 @@ export default function GhumtiPage() {
         <>
             <Navbar /><br /><br />
             <ProjectContent
-                title="Ghumti - Travel and Tourism Platform"
+                title="Ghumti Kitchen - Authentic Nepalese and Indian Cuisine in Allawah, Sydney"
                 overview="Ghumti is a modern travel and tourism platform that helps users discover, plan, and book their travel experiences. The platform provides comprehensive travel information, booking services, and personalized recommendations."
                 features={[
                     "Responsive design",
