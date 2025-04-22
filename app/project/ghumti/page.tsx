@@ -5,8 +5,8 @@ import Footer from '@/components/footer';
 import ProjectContent from '@/components/ProjectContent';
 
 export const metadata: Metadata = {
-    title: 'Ghumti - Travel and Tourism Platform',
-    description: 'A comprehensive platform for travel planning and tourism management',
+    title: 'Ghumti Kitchen',
+    description: 'A modern website for a Nepalese Restaurant in Sydney',
 };
 
 export default function GhumtiPage() {
