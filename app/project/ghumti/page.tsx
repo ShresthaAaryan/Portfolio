@@ -14,8 +14,8 @@ export default function GhumtiPage() {
         <>
             <Navbar /><br /><br />
             <ProjectContent
-                title="Ghumti Kitchen - Authentic Nepalese and Indian Cuisine in Allawah, Sydney"
-                overview="Ghumti is a modern website for a Nepalese Restaurant in Sydney. The platform provides comprehensive booking services for catering."
+                title="Ghumti Kitchen"
+                overview="Ghumti is a modern website for a Nepalese Restaurant in Sydney. The platform provides comprehensive table booking services."
                 features={[
                     "Responsive design",
                     "SEO friendly Website",
