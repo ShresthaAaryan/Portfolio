@@ -17,7 +17,7 @@ const educationData: EducationItem[] = [
         institution: "Vellore Institute of Technology",
         year: "2022 - 2026",
         location: "Vellore, India",
-        description: "CGPA: 8.5/10\nFocus on Full Stack Development, Machine Learning and Data Science"
+        description: "CGPA: 8.61/10\nFocus on Full Stack Development, Machine Learning and Data Science"
     },
     {
         degree: "Cambridge International AS & A Levels",
