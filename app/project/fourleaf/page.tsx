@@ -5,8 +5,8 @@ import Footer from '@/components/footer';
 import ProjectContent from '@/components/ProjectContent';
 
 export const metadata: Metadata = {
-    title: 'Fourleaf - Digital Marketing Platform',
-    description: 'A comprehensive digital marketing and analytics platform',
+    title: 'Fourleaf Clover Pvt. Ltd.',
+    description: 'A modern webpage for a marketing company',
 };
 
 export default function FourleafPage() {
