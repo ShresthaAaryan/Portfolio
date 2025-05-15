@@ -32,12 +32,6 @@ export default function Home() {
       <meta name="keywords" content="Full Stack Developer, React, Node.js, JavaScript, Portfolio" />
       <meta name="author" content="Aaryan Shrestha" />
     </Head>
-    <body>
-      <!-- Google Tag Manager (noscript) -->
-      <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-MCPMK4Z6"
-      height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
-      <!-- End Google Tag Manager (noscript) -->
-    </body>
     <main className="min-h-screen">
       <Navbar/>
       <section className="relative h-screen shadow-xl">
