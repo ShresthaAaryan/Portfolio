@@ -5,10 +5,11 @@ import { notFound } from 'next/navigation';
 import ProjectPageContent from '../../../components/ProjectPageContent';
 import { ProjectNavbar } from '@/components/ProjectNavbar';
 
-interface ProjectPageProps {
+type Props = {
     params: {
         slug: string;
     };
+    searchParams: { [key: string]: string | string[] | undefined };
 }
 
 export function generateStaticParams() {
@@ -17,7 +18,7 @@ export function generateStaticParams() {
     }));
 }
 
-export default function ProjectPage({ params }: ProjectPageProps) {
+export default async function ProjectPage({ params }: Props) {
     const project = projects.find((p) => p.slug === params.slug);
 
     if (!project) {
