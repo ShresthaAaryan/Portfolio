@@ -5,10 +5,13 @@ import { notFound } from 'next/navigation';
 import ProjectPageContent from '../../../components/ProjectPageContent';
 import { ProjectNavbar } from '@/components/ProjectNavbar';
 
-type Props = {
+export const dynamic = 'force-dynamic';
+
+interface PageProps {
     params: {
         slug: string;
     };
+    searchParams: { [key: string]: string | string[] | undefined };
 }
 
 export function generateStaticParams() {
@@ -17,7 +20,7 @@ export function generateStaticParams() {
     }));
 }
 
-export default function ProjectPage({ params }: Props) {
+export default function ProjectPage({ params }: PageProps) {
     const project = projects.find((p) => p.slug === params.slug);
 
     if (!project) {
