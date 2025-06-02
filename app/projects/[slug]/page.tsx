@@ -6,10 +6,9 @@ import ProjectPageContent from '../../../components/ProjectPageContent';
 import { ProjectNavbar } from '@/components/ProjectNavbar';
 
 type Props = {
-    params: Promise<{
+    params: {
         slug: string;
-    }>;
-    searchParams: Promise<{ [key: string]: string | string[] | undefined }>;
+    };
 }
 
 export function generateStaticParams() {
@@ -18,9 +17,8 @@ export function generateStaticParams() {
     }));
 }
 
-export default async function ProjectPage({ params, searchParams }: Props) {
-    const [{ slug }, resolvedSearchParams] = await Promise.all([params, searchParams]);
-    const project = projects.find((p) => p.slug === slug);
+export default function ProjectPage({ params }: Props) {
+    const project = projects.find((p) => p.slug === params.slug);
 
     if (!project) {
         notFound();
