@@ -1,11 +1,15 @@
 'use client';
 
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
 import { Send, Loader2 } from 'lucide-react';
 import emailjs from '@emailjs/browser';
 
 export default function ContactForm() {
+    useEffect(() => {
+        emailjs.init('m-oeHcMgUspNGUK7k');
+    }, []);
+
     const [formData, setFormData] = useState({
         name: '',
         email: '',
@@ -26,18 +30,21 @@ export default function ContactForm() {
                 from_email: formData.email,
                 subject: formData.subject,
                 message: formData.message,
-                to_email: 'shresthaaarya123@gmail.com'
+                reply_to: formData.email
             };
 
-            await emailjs.send(
+            const result = await emailjs.send(
                 'service_jdv7yjf',
-                'template_gqkp0cn', 
-                templateParams,
-                'm-oeHcMgUspNGUK7k' 
+                'template_anj9dpn',
+                templateParams
             );
 
-            setSubmitStatus('success');
-            setFormData({ name: '', email: '', subject: '', message: '' });
+            if (result.status === 200) {
+                setSubmitStatus('success');
+                setFormData({ name: '', email: '', subject: '', message: '' });
+            } else {
+                throw new Error('Failed to send email');
+            }
         } catch (error) {
             console.error('Error sending email:', error);
             setSubmitStatus('error');
