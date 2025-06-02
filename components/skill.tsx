@@ -1,126 +1,153 @@
 'use client';
+
 import { motion } from 'framer-motion';
-import { FaCode, FaDatabase, FaLaptopCode, FaBrain, FaCogs, FaTools } from 'react-icons/fa';
+import { Code2, Database, Globe, Languages, ChevronRight } from 'lucide-react';
+import SkillsCard from './SkillsCard';
 
-const Skills = () => {
-    const skills = [
-        {
-            category: 'Frontend',
-            items: ['React', 'Next.js', 'Vite', 'Tailwind CSS'],
-            icon: <FaLaptopCode className="text-2xl text-blue-500" />
-        },
-        {
-            category: 'Backend',
-            items: ['Node.js', 'Express', 'Python'],
-            icon: <FaCode className="text-2xl text-green-500" />
-        },
-        {
-            category: 'Database & Tools',
-            items: ['PostgreSQL', 'MongoDB', 'Supabase'],
-            icon: <FaDatabase className="text-2xl text-purple-500" />
-        },
-        {
-            category: 'Programming Languages',
-            items: ['Javascript', 'TypeScript', 'Python', 'C++'],
-            icon: <FaBrain className="text-2xl text-red-500" />
-        },
-        {
-            category: 'Skills',
-            items: ['Full Stack Development', 'Machine Learning', 'Version Control'],
-            icon: <FaCogs className="text-2xl text-yellow-500" />
-        },
-        {
-            category: 'Others',
-            items: ['Git', 'Docker', "Sci-Kit Learn"],
-            icon: <FaTools className="text-2xl text-indigo-500" />
-        }
-    ];
+type SkillCategory = 'Frontend' | 'Backend' | 'Database' | 'Tools' | 'Other';
 
-    const containerVariants = {
-        hidden: { opacity: 0 },
-        visible: {
-            opacity: 1,
-            transition: {
-                staggerChildren: 0.1
-            }
-        }
-    };
+interface Skill {
+    name: string;
+    category: SkillCategory;
+}
 
-    const itemVariants = {
-        hidden: { y: 20, opacity: 0 },
-        visible: {
-            y: 0,
-            opacity: 1,
-            transition: {
-                duration: 0.5
-            }
-        }
-    };
+const skills = [
+    {
+        title: "Frontend",
+        skills: [
+            { name: "React", category: "Frontend" as SkillCategory },
+            { name: "Next.js", category: "Frontend" as SkillCategory },
+            { name: "TypeScript", category: "Frontend" as SkillCategory },
+            { name: "Tailwind CSS", category: "Frontend" as SkillCategory }
+        ]
+    },
+    {
+        title: "Backend And Database",
+        skills: [
+            { name: "Express", category: "Backend" as SkillCategory },
+            { name: "Django", category: "Backend" as SkillCategory },
+            { name: "Firebase", category: "Backend" as SkillCategory },
+            { name: "MongoDB", category: "Database" as SkillCategory },
+            { name: "PostgreSQL", category: "Database" as SkillCategory }
+        ]
+    },
+    {
+        title: "Tools & Others",
+        skills: [
+            { name: "Git", category: "Tools" as SkillCategory },
+            { name: "Docker", category: "Tools" as SkillCategory },
+            { name: "Data Analysis", category: "Other" as SkillCategory },
+            { name: "Machine Learning", category: "Other" as SkillCategory }
+        ]
+    }
+];
 
-    const skillItemVariants = {
-        hidden: { scale: 0.8, opacity: 0 },
-        visible: {
-            scale: 1,
-            opacity: 1,
-            transition: {
-                duration: 0.3
-            }
-        }
-    };
-
-    return (
-        <section className="py-20  dark:from-gray-900 dark:to-gray-800 shadow-sm" id='skills'>
-            <motion.div
-                className="container px-4 mx-auto"
-                initial="hidden"
-                whileInView="visible"
-                viewport={{ once: true }}
-                variants={containerVariants}
-            >
-                <motion.h2
-                    className="text-4xl font-bold mb-16 text-center text-blue-800 dark:text-blue-500 bg-clip-text"
-                    variants={itemVariants}
-                >
-                    Skills & Technologies
-                </motion.h2>
-                <motion.div
-                    className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8"
-                    variants={containerVariants}
-                >
-                    {skills.map((skill, index) => (
-                        <motion.div
-                            key={index}
-                            variants={itemVariants}
-                            className="bg-white dark:bg-gray-900 p-6 rounded-xl shadow-lg hover:shadow-xl transform hover:-translate-y-1 transition-all duration-300"
-                        >
-                            <div className="flex items-center mb-6">
-                                <div className="mr-4">
-                                    {skill.icon}
-                                </div>
-                                <h3 className="text-xl font-semibold text-gray-800 dark:text-white">
-                                    {skill.category}
-                                </h3>
-                            </div>
-                            <div className="flex flex-wrap gap-2">
-                                {skill.items.map((item, itemIndex) => (
-                                    <motion.span
-                                        key={itemIndex}
-                                        variants={skillItemVariants}
-                                        className="px-3 py-1 bg-gradient-to-r from-blue-500/10 to-blue-1000/10 
-                                                 text-blue-600 dark:text-blue-400 rounded-full text-sm font-medium
-                                                 hover:from-blue-500/20 hover:to-purple-500/20 transition-colors
-                                                 cursor-default"
-                                    >
-                                        {item}
-                                    </motion.span>
-                                ))}
-                            </div>
-                        </motion.div>
-                    ))}
-                </motion.div>
-            </motion.div>
-        </section>
-    );
+const containerVariants = {
+    hidden: { opacity: 0 },
+    visible: {
+        opacity: 1,
+        transition: {
+            staggerChildren: 0.1,
+        },
+    },
 };
 
-export default Skills;
+const itemVariants = {
+    hidden: { opacity: 0, y: 20 },
+    visible: {
+        opacity: 1,
+        y: 0,
+        transition: {
+            duration: 0.5,
+        },
+    },
+};
+
+export default function Skills() {
+    return (
+        <section id="skills" className="py-24 md:py-32 bg-background relative overflow-hidden">
+            {/* Background Elements */}
+            <div className="absolute inset-0 bg-[url('/grid.svg')] opacity-5" />
+            <div className="absolute inset-0 bg-gradient-to-b from-transparent via-background/50 to-background" />
+            <div className="absolute inset-0 bg-gradient-to-r from-[#1C1C1C]/5 to-transparent dark:from-white/5" />
+
+            <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+                <div className="max-w-7xl mx-auto">
+                    <motion.div
+                        initial={{ opacity: 0, y: 20 }}
+                        whileInView={{ opacity: 1, y: 0 }}
+                        viewport={{ once: true }}
+                        transition={{ duration: 0.5 }}
+                        className="text-center mb-20"
+                    >
+                        <h2 className="text-4xl md:text-5xl font-cormorant font-medium mb-6 bg-gradient-to-r from-[#1C1C1C] via-gray-700 to-[#1C1C1C] dark:from-white dark:via-gray-300 dark:to-white bg-clip-text text-transparent">
+                            Technical Expertise
+                        </h2>
+                        <p className="text-gray-600 dark:text-gray-400 max-w-2xl mx-auto text-lg leading-relaxed">
+                            A comprehensive overview of my technical skills and capabilities in modern web development
+                            and software engineering.
+                        </p>
+                    </motion.div>
+
+                    <motion.div
+                        variants={containerVariants}
+                        initial="hidden"
+                        whileInView="visible"
+                        viewport={{ once: true }}
+                        className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8"
+                    >
+                        {skills.map((skillGroup, index) => (
+                            <motion.div
+                                key={index}
+                                variants={itemVariants}
+                                whileHover={{ y: -5, scale: 1.02 }}
+                            >
+                                <SkillsCard
+                                    title={skillGroup.title}
+                                    skills={skillGroup.skills}
+                                />
+                            </motion.div>
+                        ))}
+                    </motion.div>
+
+                    <motion.div
+                        initial={{ opacity: 0, y: 20 }}
+                        whileInView={{ opacity: 1, y: 0 }}
+                        viewport={{ once: true }}
+                        transition={{ duration: 0.5, delay: 0.2 }}
+                        className="mt-24"
+                    >
+                        <h3 className="text-2xl md:text-3xl font-cormorant font-medium text-center mb-12 bg-gradient-to-r from-[#1C1C1C] via-gray-700 to-[#1C1C1C] dark:from-white dark:via-gray-300 dark:to-white bg-clip-text text-transparent">
+                            Additional Skills
+                        </h3>
+                        <div className="flex flex-wrap justify-center gap-4">
+                            {[
+                                "Full Stack Development",
+                                "Data Analysis",
+                                "Artificial Intelligence",
+                                "Machine Learning",
+                                "Responsive Design",
+                                "Agile Methodologies",
+                                "Performance Optimization",
+                                "Cross-browser Compatibility",
+                                "Version Control",
+                                "API Integration"
+                            ].map((skill) => (
+                                <motion.span
+                                    key={skill}
+                                    initial={{ opacity: 0, scale: 0.9 }}
+                                    whileInView={{ opacity: 1, scale: 1 }}
+                                    viewport={{ once: true }}
+                                    whileHover={{ scale: 1.05, y: -2 }}
+                                    className="px-5 py-2.5 bg-white/90 dark:bg-[#1E1E1E]/90 backdrop-blur-sm rounded-full text-sm text-[#1C1C1C] dark:text-gray-300 border border-gray-200/50 dark:border-gray-800/50 shadow-sm hover:shadow-lg transition-all duration-300"
+                                >
+                                    {skill}
+                                </motion.span>
+                            ))}
+                        </div>
+                    </motion.div>
+                </div>
+            </div>
+        </section>
+    );
+}
