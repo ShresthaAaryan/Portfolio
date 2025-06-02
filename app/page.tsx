@@ -26,7 +26,7 @@ export default function Home() {
       <Navbar />
 
       {/* Hero Section */}
-      <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
+      <section className="relative min-h-[calc(100vh-4rem)] flex items-center justify-center overflow-hidden py-16 md:py-0">
         {/* Background Elements */}
         <div className="absolute inset-0">
           <Image
@@ -43,63 +43,63 @@ export default function Home() {
         {/* Content */}
         <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <div className="max-w-7xl mx-auto">
-            <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 md:gap-16 items-center">
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 md:gap-16 items-center">
               {/* Left Column - Text Content */}
-              <div className="text-white space-y-6 md:space-y-8 ">
-                <div className="space-y-4 text-center md:text-start">
-                  <h1 className="text-5xl md:text-6xl font-cormorant font-medium">
+              <div className="text-white space-y-4 md:space-y-8 order-2 lg:order-1">
+                <div className="space-y-3 md:space-y-4 text-center lg:text-start">
+                  <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-cormorant font-medium">
                     Crafting Digital
-                    <span className="text-gradient block mt-2">Excellence</span>
+                    <span className="text-gradient block mt-1 md:mt-2">Excellence</span>
                   </h1>
-                  <p className="text-white/90 text-lg md:text-xl text-center md:text-start">
+                  <p className="text-white/90 text-sm sm:text-base md:text-lg lg:text-xl text-center lg:text-start">
                     Full Stack Developer | Data Analyst
                   </p>
                 </div>
 
-                <p className="text-white/80 max-w-lg text-base md:text-lg text-center md:text-start">
+                <p className="text-white/80 text-xs sm:text-sm md:text-base lg:text-lg text-center lg:text-start max-w-lg mx-auto lg:mx-0">
                   Transforming ideas into elegant digital solutions. Specializing in modern web technologies
                   and creating seamless user experiences that make an impact.
                 </p>
 
-                <div className="flex flex-wrap gap-4 justify-center md:justify-start">
-                  <a href="/projects" className="inline-flex items-center px-6 py-3 bg-white text-[#1C1C1C] rounded-md hover:bg-gray-100 transition-colors">
+                <div className="flex flex-wrap gap-3 md:gap-4 justify-center lg:justify-start">
+                  <a href="/projects" className="inline-flex items-center px-3 sm:px-4 md:px-6 py-2 sm:py-3 bg-white text-[#1C1C1C] rounded-md hover:bg-gray-100 transition-colors text-xs sm:text-sm md:text-base">
                     View My Work
-                    <ArrowRight className="w-5 h-5 ml-2 inline-block transition-transform group-hover:translate-x-1" />
+                    <ArrowRight className="w-3 h-3 sm:w-4 sm:h-4 md:w-5 md:h-5 ml-2 inline-block transition-transform group-hover:translate-x-1" />
                   </a>
-                  <a href="/contact" className="inline-flex items-center px-6 py-3 border border-white text-white rounded-md hover:bg-white hover:text-[#1C1C1C] transition-colors">
+                  <a href="/contact" className="inline-flex items-center px-3 sm:px-4 md:px-6 py-2 sm:py-3 border border-white text-white rounded-md hover:bg-white hover:text-[#1C1C1C] transition-colors text-xs sm:text-sm md:text-base">
                     Get in Touch
                   </a>
                 </div>
 
                 {/* Social Links */}
-                <div className="flex space-x-6 justify-center md:justify-start">
+                <div className="flex items-center space-x-4 md:space-x-6 justify-center lg:justify-start mt-3 md:mt-4">
                   <a
                     href="https://github.com/ShresthaAaryan"
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="text-white/80 hover:text-white transition-colors"
+                    className="text-white/80 hover:text-white transition-colors transform hover:scale-110"
                   >
-                    <Github className="w-6 h-6" />
+                    <Github className="w-4 h-4 sm:w-5 sm:h-5 md:w-6 md:h-6" />
                   </a>
                   <a
                     href="https://linkedin.com/in/aaryanshrestha"
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="text-white/80 hover:text-white transition-colors"
+                    className="text-white/80 hover:text-white transition-colors transform hover:scale-110"
                   >
-                    <Linkedin className="w-6 h-6" />
+                    <Linkedin className="w-4 h-4 sm:w-5 sm:h-5 md:w-6 md:h-6" />
                   </a>
                   <a
                     href="mailto:shresthaaaryan123@gmail.com"
-                    className="text-white/80 hover:text-white transition-colors"
+                    className="text-white/80 hover:text-white transition-colors transform hover:scale-110"
                   >
-                    <Mail className="w-6 h-6" />
+                    <Mail className="w-4 h-4 sm:w-5 sm:h-5 md:w-6 md:h-6" />
                   </a>
                 </div>
               </div>
 
               {/* Right Column - Image */}
-              <div className="relative h-[300px] md:h-[400px] lg:h-[500px] rounded-2xl overflow-hidden shadow-2xl">
+              <div className="relative h-[200px] sm:h-[250px] md:h-[300px] lg:h-[500px] rounded-2xl overflow-hidden shadow-2xl order-1 lg:order-2 mb-6 lg:mb-0">
                 <Image
                   src={hero}
                   alt="Aaryan Shrestha"
@@ -114,13 +114,13 @@ export default function Home() {
         </div>
 
         {/* Scroll Indicator */}
-        <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2">
+        <div className="absolute bottom-4 md:bottom-8 left-1/2 transform -translate-x-1/2">
           <button
             onClick={handleScroll}
             className="flex flex-col items-center text-white/80 hover:text-white transition-colors duration-300"
           >
-            <span className="text-white/60 text-sm mb-2">Scroll to explore</span>
-            <ChevronDown className="w-6 h-6 animate-bounce" />
+            <span className="text-white/60 text-xs sm:text-sm mb-1 md:mb-2">Scroll to explore</span>
+            <ChevronDown className="w-4 h-4 sm:w-5 sm:h-5 md:w-6 md:h-6 animate-bounce" />
           </button>
         </div>
       </section>

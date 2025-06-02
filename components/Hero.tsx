@@ -80,7 +80,7 @@ export default function Hero({ title, description, buttons }: HeroProps) {
     if (!mounted) return null;
 
     return (
-        <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
+        <section className="relative min-h-screen flex items-center justify-center overflow-hidden py-20 md:py-0">
             {/* Background Image */}
             <div className="absolute inset-0">
                 <Image
@@ -100,14 +100,14 @@ export default function Hero({ title, description, buttons }: HeroProps) {
 
             <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
                 <div className="max-w-7xl mx-auto">
-                    <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 md:gap-16 items-center">
+                    <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 md:gap-16 items-center">
                         {/* Left Column - Text Content */}
-                        <div className="text-white space-y-6 md:space-y-8 text-center lg:text-left">
-                            <div className="space-y-4">
-                                <h1 className="text-5xl md:text-6xl font-cormorant font-medium">
+                        <div className="text-white space-y-6 md:space-y-8 order-2 lg:order-1">
+                            <div className="space-y-4 text-center lg:text-start">
+                                <h1 className="text-4xl sm:text-5xl md:text-6xl font-cormorant font-medium">
                                     {title}
                                 </h1>
-                                <p className="text-white/90 text-lg md:text-xl">
+                                <p className="text-white/90 text-base sm:text-lg md:text-xl">
                                     {description}
                                 </p>
                             </div>
@@ -118,45 +118,45 @@ export default function Hero({ title, description, buttons }: HeroProps) {
                                         <a
                                             key={index}
                                             href={button.link}
-                                            className="inline-flex items-center px-6 py-3 bg-white text-[#1C1C1C] rounded-md hover:bg-gray-100 transition-colors"
+                                            className="inline-flex items-center px-4 sm:px-6 py-2 sm:py-3 bg-white text-[#1C1C1C] rounded-md hover:bg-gray-100 transition-colors text-sm sm:text-base"
                                         >
                                             {button.icon}
                                             {button.text}
-                                            {!button.icon && <ArrowRight className="w-5 h-5 ml-2 inline-block transition-transform group-hover:translate-x-1" />}
+                                            {!button.icon && <ArrowRight className="w-4 h-4 sm:w-5 sm:h-5 ml-2 inline-block transition-transform group-hover:translate-x-1" />}
                                         </a>
                                     ))}
                                 </div>
                             )}
 
                             {/* Social Links */}
-                            <div className="flex space-x-6">
+                            <div className="flex items-center space-x-6 justify-center lg:justify-start mt-4">
                                 <a
                                     href="https://github.com/ShresthaAaryan"
                                     target="_blank"
                                     rel="noopener noreferrer"
-                                    className="text-white/80 hover:text-white transition-colors"
+                                    className="text-white/80 hover:text-white transition-colors transform hover:scale-110"
                                 >
-                                    <Github className="w-6 h-6" />
+                                    <Github className="w-5 h-5 sm:w-6 sm:h-6" />
                                 </a>
                                 <a
                                     href="https://linkedin.com/in/aaryanshrestha"
                                     target="_blank"
                                     rel="noopener noreferrer"
-                                    className="text-white/80 hover:text-white transition-colors"
+                                    className="text-white/80 hover:text-white transition-colors transform hover:scale-110"
                                 >
-                                    <Linkedin className="w-6 h-6" />
+                                    <Linkedin className="w-5 h-5 sm:w-6 sm:h-6" />
                                 </a>
                                 <a
                                     href="mailto:shresthaaaryan123@gmail.com"
-                                    className="text-white/80 hover:text-white transition-colors"
+                                    className="text-white/80 hover:text-white transition-colors transform hover:scale-110"
                                 >
-                                    <Mail className="w-6 h-6" />
+                                    <Mail className="w-5 h-5 sm:w-6 sm:h-6" />
                                 </a>
                             </div>
                         </div>
 
                         {/* Right Column - Image */}
-                        <div className="relative h-[300px] md:h-[400px] lg:h-[500px] rounded-2xl overflow-hidden shadow-2xl">
+                        <div className="relative h-[250px] sm:h-[300px] md:h-[400px] lg:h-[500px] rounded-2xl overflow-hidden shadow-2xl order-1 lg:order-2 mb-8 lg:mb-0">
                             <Image
                                 src={getRightColumnImage()}
                                 alt="Aaryan Shrestha"
