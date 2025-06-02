@@ -2,8 +2,12 @@ export interface Project {
     title: string;
     description: string;
     longDescription?: string;
+    overview: string;
+    features: string[];
     image: string;
+    images: string[];
     technologies: string[];
+    impact: string;
     slug: string;
     category: string;
     featured: boolean;
