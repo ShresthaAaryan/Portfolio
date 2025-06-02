@@ -4,9 +4,10 @@ import { Navbar } from '@/components/navbar';
 import Footer from '@/components/footer';
 import Hero from '@/components/Hero';
 import SkillsCard from '@/components/SkillsCard';
-import { GraduationCap, Award, School } from 'lucide-react';
+import { GraduationCap, Award, School, Download } from 'lucide-react';
 import Education from '@/components/education';
 import AboutComponent from '@/components/about';
+import { Button } from '@/components/ui/button';
 
 const skills = [
     {
@@ -24,7 +25,7 @@ const skills = [
             { name: "Express", category: "Backend" },
             { name: "Django", category: "Backend" },
             { name: "Firebase", category: "Backend" }
-            
+
         ]
     },
     {
@@ -54,10 +55,15 @@ export default function About() {
                     {
                         text: "Contact Me",
                         link: "/contact"
+                    },
+                    {
+                        text: "Download Resume",
+                        link: "/resume.pdf",
+                        icon: <Download className="mr-2 h-4 w-4" />
                     }
                 ]}
             />
-            
+
             <AboutComponent />
 
             <section id="education">
