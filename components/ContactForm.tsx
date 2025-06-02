@@ -3,6 +3,7 @@
 import { useState } from 'react';
 import { motion } from 'framer-motion';
 import { Send, Loader2 } from 'lucide-react';
+import emailjs from '@emailjs/browser';
 
 export default function ContactForm() {
     const [formData, setFormData] = useState({
@@ -20,11 +21,25 @@ export default function ContactForm() {
         setSubmitStatus('idle');
 
         try {
-            // Simulate form submission
-            await new Promise(resolve => setTimeout(resolve, 1500));
+            const templateParams = {
+                from_name: formData.name,
+                from_email: formData.email,
+                subject: formData.subject,
+                message: formData.message,
+                to_email: 'shresthaaarya123@gmail.com'
+            };
+
+            await emailjs.send(
+                'service_jdv7yjf',
+                'template_gqkp0cn', 
+                templateParams,
+                'm-oeHcMgUspNGUK7k' 
+            );
+
             setSubmitStatus('success');
             setFormData({ name: '', email: '', subject: '', message: '' });
         } catch (error) {
+            console.error('Error sending email:', error);
             setSubmitStatus('error');
         } finally {
             setIsSubmitting(false);
