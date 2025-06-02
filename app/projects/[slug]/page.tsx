@@ -9,7 +9,7 @@ type Props = {
     params: Promise<{
         slug: string;
     }>;
-    searchParams: { [key: string]: string | string[] | undefined };
+    searchParams: Promise<{ [key: string]: string | string[] | undefined }>;
 }
 
 export function generateStaticParams() {
@@ -18,8 +18,8 @@ export function generateStaticParams() {
     }));
 }
 
-export default async function ProjectPage({ params }: Props) {
-    const { slug } = await params;
+export default async function ProjectPage({ params, searchParams }: Props) {
+    const [{ slug }, resolvedSearchParams] = await Promise.all([params, searchParams]);
     const project = projects.find((p) => p.slug === slug);
 
     if (!project) {
