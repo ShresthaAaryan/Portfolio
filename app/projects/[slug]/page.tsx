@@ -2,16 +2,15 @@ import { Navbar } from '@/components/navbar';
 import Footer from '@/components/footer';
 import { projects } from '@/data/projects';
 import { notFound } from 'next/navigation';
-import ProjectPageContent from '../../../components/ProjectPageContent';
+import ProjectContent from '@/components/ProjectContent';
 import { ProjectNavbar } from '@/components/ProjectNavbar';
 
-export const dynamic = 'force-dynamic';
+export const dynamic = 'force-static';
 
-interface PageProps {
+type Props = {
     params: {
         slug: string;
     };
-    searchParams: { [key: string]: string | string[] | undefined };
 }
 
 export function generateStaticParams() {
@@ -20,7 +19,7 @@ export function generateStaticParams() {
     }));
 }
 
-export default function ProjectPage({ params }: PageProps) {
+export default function ProjectPage({ params }: Props) {
     const project = projects.find((p) => p.slug === params.slug);
 
     if (!project) {
@@ -31,7 +30,16 @@ export default function ProjectPage({ params }: PageProps) {
         <main className="min-h-screen bg-background">
             <ProjectNavbar />
             <div className="pt-16">
-                <ProjectPageContent project={project} />
+                <ProjectContent
+                    title={project.title}
+                    overview={project.longDescription || project.description}
+                    features={project.keyFeatures || []}
+                    technologies={project.technologies}
+                    impact={project.challenges?.join('. ') || ''}
+                    images={[{ src: project.image, alt: project.title }]}
+                    githubUrl={project.githubUrl}
+                    websiteUrl={project.websiteUrl}
+                />
             </div>
             <Footer />
         </main>
