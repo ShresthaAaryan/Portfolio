@@ -9,7 +9,7 @@ interface PageProps {
     params: Promise<{
         slug: string;
     }>;
-    searchParams: { [key: string]: string | string[] | undefined };
+    searchParams: Promise<{ [key: string]: string | string[] | undefined }>;
 }
 
 export function generateStaticParams() {
@@ -18,8 +18,8 @@ export function generateStaticParams() {
     }));
 }
 
-export default async function ProjectPage({ params }: PageProps) {
-    const resolvedParams = await params;
+export default async function ProjectPage({ params, searchParams }: PageProps) {
+    const [resolvedParams, resolvedSearchParams] = await Promise.all([params, searchParams]);
     const project = projects.find((p) => p.slug === resolvedParams.slug);
 
     if (!project) {
