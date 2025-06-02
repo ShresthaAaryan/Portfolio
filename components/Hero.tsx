@@ -16,6 +16,7 @@ interface HeroProps {
     buttons?: {
         text: string;
         link: string;
+        icon?: React.ReactNode;
     }[];
 }
 
@@ -119,8 +120,9 @@ export default function Hero({ title, description, buttons }: HeroProps) {
                                             href={button.link}
                                             className="inline-flex items-center px-6 py-3 bg-white text-[#1C1C1C] rounded-md hover:bg-gray-100 transition-colors"
                                         >
+                                            {button.icon}
                                             {button.text}
-                                            <ArrowRight className="w-5 h-5 ml-2 inline-block transition-transform group-hover:translate-x-1" />
+                                            {!button.icon && <ArrowRight className="w-5 h-5 ml-2 inline-block transition-transform group-hover:translate-x-1" />}
                                         </a>
                                     ))}
                                 </div>
