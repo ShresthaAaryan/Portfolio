@@ -5,7 +5,7 @@ import { Button } from '@/components/ui/button';
 import { Mail, Instagram, Linkedin, Github, ArrowRight, Award, BookOpen, Code2, Briefcase } from 'lucide-react';
 import Link from 'next/link';
 import Image from 'next/image';
-import hero from '../public/hero1.jpg';
+import hero from '../public/hero11.jpg';
 
 const About = () => {
     return (
