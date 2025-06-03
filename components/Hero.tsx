@@ -81,7 +81,7 @@ export default function Hero({ title, description, buttons }: HeroProps) {
     if (!mounted) return null;
 
     return (
-        <section className="relative min-h-screen flex items-center justify-center overflow-hidden py-20 md:py-0">
+        <section className={`relative ${pathname === '/' ? 'min-h-screen' : 'min-h-[calc(100vh-4rem)]'} flex items-center justify-center overflow-hidden py-20 md:py-0`}>
             {/* Background Image */}
             <div className="absolute inset-0">
                 <Image
@@ -101,7 +101,7 @@ export default function Hero({ title, description, buttons }: HeroProps) {
 
             <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
                 <div className="max-w-7xl mx-auto">
-                    <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 md:gap-16 items-center">
+                    <div className={`grid grid-cols-1 lg:grid-cols-2 gap-8 md:gap-16 items-center ${pathname === '/' ? 'min-h-screen' : ''}`}>
                         {/* Left Column - Text Content */}
                         <div className="text-white space-y-6 md:space-y-8 order-1 lg:order-1">
                             <div className="space-y-4 text-center lg:text-start">
