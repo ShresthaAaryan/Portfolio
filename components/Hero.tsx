@@ -81,7 +81,7 @@ export default function Hero({ title, description, buttons }: HeroProps) {
     if (!mounted) return null;
 
     return (
-        <section className={`relative ${pathname === '/' ? 'min-h-screen' : 'min-h-[calc(100vh-4rem)]'} flex items-center justify-center overflow-hidden py-20 md:py-0`}>
+        <section className="relative h-screen md:min-h-screen flex items-center justify-center overflow-hidden py-20 md:py-0">
             {/* Background Image */}
             <div className="absolute inset-0">
                 <Image
@@ -100,11 +100,11 @@ export default function Hero({ title, description, buttons }: HeroProps) {
             <div className="absolute inset-0 bg-[url('/grid.svg')] opacity-10" />
 
             <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-                <div className="max-w-7xl mx-auto">
-                    <div className={`grid grid-cols-1 lg:grid-cols-2 gap-8 md:gap-16 items-center ${pathname === '/' ? 'min-h-screen' : ''}`}>
+                <div className="max-w-7xl mx-auto py-0 md:py-0">
+                    <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 md:gap-16 h-auto md:min-h-screen items-center">
                         {/* Left Column - Text Content */}
-                        <div className="text-white space-y-6 md:space-y-8 order-1 lg:order-1">
-                            <div className="space-y-4 text-center lg:text-start">
+                        <div className="text-white space-y-4 md:space-y-8 order-1 lg:order-1 py-0 md:py-0 my-0">
+                            <div className="space-y-2 md:space-y-4 text-center lg:text-start">
                                 <h1 className="text-4xl sm:text-5xl md:text-6xl font-cormorant font-medium">
                                     {title}
                                 </h1>
@@ -114,7 +114,7 @@ export default function Hero({ title, description, buttons }: HeroProps) {
                             </div>
 
                             {buttons && buttons.length > 0 && (
-                                <div className="flex flex-wrap gap-4 justify-center lg:justify-start">
+                                <div className="flex flex-wrap gap-3 md:gap-4 justify-center lg:justify-start">
                                     {buttons.map((button, index) => (
                                         <a
                                             key={index}
@@ -157,7 +157,7 @@ export default function Hero({ title, description, buttons }: HeroProps) {
                         </div>
 
                         {/* Right Column - Image */}
-                        <div className="relative h-[250px] sm:h-[300px] md:h-[400px] lg:h-[500px] rounded-2xl overflow-hidden shadow-2xl order-2 lg:order-2 mb-8 lg:mb-0">
+                        <div className="relative h-[200px] sm:h-[250px] md:h-[300px] lg:h-[500px] rounded-2xl overflow-hidden shadow-2xl order-2 lg:order-2 mb-6 lg:mb-0 py-0 md:py-0 my-0">
                             <Image
                                 src={getRightColumnImage()}
                                 alt="Aaryan Shrestha"
