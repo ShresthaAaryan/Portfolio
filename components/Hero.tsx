@@ -102,7 +102,7 @@ export default function Hero({ title, description, buttons }: HeroProps) {
                 <div className="max-w-7xl mx-auto">
                     <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 md:gap-16 items-center">
                         {/* Left Column - Text Content */}
-                        <div className="text-white space-y-6 md:space-y-8 order-2 lg:order-1">
+                        <div className="text-white space-y-6 md:space-y-8 order-1 lg:order-1">
                             <div className="space-y-4 text-center lg:text-start">
                                 <h1 className="text-4xl sm:text-5xl md:text-6xl font-cormorant font-medium">
                                     {title}
@@ -156,7 +156,7 @@ export default function Hero({ title, description, buttons }: HeroProps) {
                         </div>
 
                         {/* Right Column - Image */}
-                        <div className="relative h-[250px] sm:h-[300px] md:h-[400px] lg:h-[500px] rounded-2xl overflow-hidden shadow-2xl order-1 lg:order-2 mb-8 lg:mb-0">
+                        <div className="relative h-[250px] sm:h-[300px] md:h-[400px] lg:h-[500px] rounded-2xl overflow-hidden shadow-2xl order-2 lg:order-2 mb-8 lg:mb-0">
                             <Image
                                 src={getRightColumnImage()}
                                 alt="Aaryan Shrestha"

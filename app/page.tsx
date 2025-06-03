@@ -26,7 +26,7 @@ export default function Home() {
       <Navbar />
 
       {/* Hero Section */}
-      <section className="relative min-h-[calc(100vh-4rem)] flex items-center justify-center overflow-hidden py-16 md:py-0">
+      <section className="relative min-h-screen flex items-center justify-center overflow-hidden py-8 md:py-0">
         {/* Background Elements */}
         <div className="absolute inset-0">
           <Image
@@ -43,9 +43,9 @@ export default function Home() {
         {/* Content */}
         <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <div className="max-w-7xl mx-auto">
-            <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 md:gap-16 items-center">
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 md:gap-16 items-center min-h-[calc(100vh-4rem)]">
               {/* Left Column - Text Content */}
-              <div className="text-white space-y-4 md:space-y-8 order-2 lg:order-1">
+              <div className="text-white space-y-4 md:space-y-8 order-1 lg:order-1">
                 <div className="space-y-3 md:space-y-4 text-center lg:text-start">
                   <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-cormorant font-medium">
                     Crafting Digital
@@ -99,7 +99,7 @@ export default function Home() {
               </div>
 
               {/* Right Column - Image */}
-              <div className="relative h-[200px] sm:h-[250px] md:h-[300px] lg:h-[500px] rounded-2xl overflow-hidden shadow-2xl order-1 lg:order-2 mb-6 lg:mb-0">
+              <div className="relative h-[200px] sm:h-[250px] md:h-[300px] lg:h-[500px] rounded-2xl overflow-hidden shadow-2xl order-2 lg:order-2 mb-6 lg:mb-0">
                 <Image
                   src={hero}
                   alt="Aaryan Shrestha"
