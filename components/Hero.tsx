@@ -9,6 +9,7 @@ import { useEffect, useState } from 'react';
 import hero1 from '../public/hero1.jpg';
 import hero2 from '../public/hero2.jpg';
 import hero11 from '../public/hero11.jpg'
+import hero from '../public/hero.jpg'
 
 interface HeroProps {
     title: string;
@@ -32,7 +33,7 @@ export default function Hero({ title, description, buttons }: HeroProps) {
     const getHeroImage = () => {
         switch (pathname) {
             case '/':
-                return 'https://images.unsplash.com/photo-1550745165-9bc0b252726f?auto=format&fit=crop&q=80';
+                return hero1;
             case '/projects':
                 return hero2;
             case '/contact':
@@ -45,7 +46,7 @@ export default function Hero({ title, description, buttons }: HeroProps) {
     const getRightColumnImage = () => {
         switch (pathname) {
             case '/':
-                return hero1;
+                return hero;
             case '/projects':
                 return 'https://images.unsplash.com/photo-1498050108023-c5249f4df085?auto=format&fit=crop&q=80';
             case '/contact':
