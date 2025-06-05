@@ -32,12 +32,12 @@ export default function Home() {
         description="Full Stack Developer | Data Analyst. Transforming ideas into elegant digital solutions. Specializing in modern web technologies and creating seamless user experiences that make an impact."
         buttons={[
           {
-            text: "View My Work",
+            text: "View My Work ",
             link: "/projects",
             icon: <ArrowRight className="w-3 h-3 sm:w-4 sm:h-4 md:w-5 md:h-5 ml-2 inline-block transition-transform group-hover:translate-x-1" />
           },
           {
-            text: "Get in Touch",
+            text: "Get in Touch ",
             link: "/contact"
           }
         ]}

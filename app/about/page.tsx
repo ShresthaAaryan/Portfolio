@@ -49,6 +49,11 @@ export default function About() {
                 description="Learn more about my journey, skills, and experience in web development."
                 buttons={[
                     {
+                        text: "Download Resume",
+                        link: "/resume.pdf",
+                        icon: <Download className="mr-2 h-4 w-4" />
+                    },
+                    {
                         text: "View Projects",
                         link: "/projects"
                     },
@@ -56,11 +61,7 @@ export default function About() {
                         text: "Contact Me",
                         link: "/contact"
                     },
-                    {
-                        text: "Download Resume",
-                        link: "/resume.pdf",
-                        icon: <Download className="mr-2 h-4 w-4" />
-                    }
+                    
                 ]}
             />
 

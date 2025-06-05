@@ -57,24 +57,15 @@ export default function Hero({ title, description, buttons }: HeroProps) {
     };
 
     const handleScroll = () => {
-        let targetId = '';
-        switch (pathname) {
-            case '/':
-                targetId = 'about';
-                break;
-            case '/projects':
-                targetId = 'projects';
-                break;
-            case '/contact':
-                targetId = 'contact-form';
-                break;
-            default:
-                targetId = 'about';
-        }
-
-        const targetSection = document.getElementById(targetId);
-        if (targetSection) {
-            targetSection.scrollIntoView({ behavior: 'smooth' });
+        const heroSection = document.querySelector('section');
+        if (heroSection) {
+            const nextSection = heroSection.nextElementSibling;
+            if (nextSection) {
+                nextSection.scrollIntoView({
+                    behavior: 'smooth',
+                    block: 'start'
+                });
+            }
         }
     };
 
@@ -101,7 +92,7 @@ export default function Hero({ title, description, buttons }: HeroProps) {
 
             <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
                 <div className="max-w-7xl mx-auto py-0 md:py-0">
-                    <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 md:gap-16 h-auto md:min-h-screen items-center">
+                    <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 md:gap-16 items-center">
                         {/* Left Column - Text Content */}
                         <div className="text-white space-y-4 md:space-y-8 order-1 lg:order-1 py-0 md:py-0 my-0">
                             <div className="space-y-2 md:space-y-4 text-center lg:text-start">
@@ -119,11 +110,11 @@ export default function Hero({ title, description, buttons }: HeroProps) {
                                         <a
                                             key={index}
                                             href={button.link}
-                                            className="inline-flex items-center px-4 sm:px-6 py-2 sm:py-3 bg-white text-[#1C1C1C] rounded-md hover:bg-gray-100 transition-colors text-sm sm:text-base"
+                                            className="inline-flex items-center px-4 gap-2 sm:px-6 py-2 sm:py-3 bg-white text-[#1C1C1C] rounded-md hover:bg-gray-100 transition-colors text-sm sm:text-base"
                                         >
                                             {button.text}
                                             {button.icon}
-                                            
+
                                             {!button.icon && <ArrowRight className="w-4 h-4 sm:w-5 sm:h-5 ml-2 inline-block transition-transform group-hover:translate-x-1" />}
                                         </a>
                                     ))}
