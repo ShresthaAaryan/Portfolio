@@ -121,8 +121,9 @@ export default function Hero({ title, description, buttons }: HeroProps) {
                                             href={button.link}
                                             className="inline-flex items-center px-4 sm:px-6 py-2 sm:py-3 bg-white text-[#1C1C1C] rounded-md hover:bg-gray-100 transition-colors text-sm sm:text-base"
                                         >
-                                            {button.icon}
                                             {button.text}
+                                            {button.icon}
+                                            
                                             {!button.icon && <ArrowRight className="w-4 h-4 sm:w-5 sm:h-5 ml-2 inline-block transition-transform group-hover:translate-x-1" />}
                                         </a>
                                     ))}
