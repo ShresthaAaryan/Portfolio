@@ -239,16 +239,17 @@ export default function ProjectContent({
                                     {overview}
                                 </p>
                                 <h2 className="text-3xl font-bold mb-8 bg-clip-text text-transparent bg-gradient-to-r from-blue-700 via-blue-400 to-blue-600 dark:from-blue-300 dark:to-blue-500 tracking-tight">
-                                    Key Features
+                                    Technologies Used
                                 </h2>
                                 <ul className="space-y-5 text-gray-800 dark:text-gray-200 text-base">
-                                    {keyFeatures.map((feature, index) => (
+                                    {technologies.map((tech, index) => (
                                         <li key={index} className="flex items-start gap-4">
                                             <span className="text-blue-500 dark:text-blue-400 mt-1 text-xl">•</span>
-                                            <span className="leading-relaxed font-medium">{feature}</span>
+                                            <span className="leading-relaxed font-medium">{tech}</span>
                                         </li>
                                     ))}
                                 </ul>
+                                
                             </div>
                         </motion.div>
 
@@ -261,13 +262,13 @@ export default function ProjectContent({
                             <div className="absolute inset-0 pointer-events-none rounded-3xl bg-gradient-to-br from-blue-100/40 via-transparent to-blue-400/10 dark:from-blue-900/30 dark:to-blue-700/10 z-0" />
                             <div className="relative z-10">
                                 <h2 className="text-3xl font-bold mb-8 bg-clip-text text-transparent bg-gradient-to-r from-blue-700 via-blue-400 to-blue-600 dark:from-blue-300 dark:to-blue-500 tracking-tight">
-                                    Technologies Used
+                                    Key Features
                                 </h2>
                                 <ul className="space-y-5 text-gray-800 dark:text-gray-200 text-base">
-                                    {technologies.map((tech, index) => (
+                                    {keyFeatures.map((feature, index) => (
                                         <li key={index} className="flex items-start gap-4">
                                             <span className="text-blue-500 dark:text-blue-400 mt-1 text-xl">•</span>
-                                            <span className="leading-relaxed font-medium">{tech}</span>
+                                            <span className="leading-relaxed font-medium">{feature}</span>
                                         </li>
                                     ))}
                                 </ul>

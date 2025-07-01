@@ -1,6 +1,6 @@
 import { Navbar } from '@/components/navbar';
 import Footer from '@/components/footer';
-import { projects } from '@/data/projects';
+import { projects } from '@/lib/projects';
 import { notFound } from 'next/navigation';
 import ProjectContent from '@/components/ProjectContent';
 import { ProjectNavbar } from '@/components/ProjectNavbar';

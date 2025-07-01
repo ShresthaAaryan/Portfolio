@@ -3,7 +3,7 @@ export interface Project {
     description: string;
     longDescription?: string;
     overview: string;
-    features: string[];
+    keyFeatures: string[];
     image: string;
     images: string[];
     technologies: string[];
@@ -13,7 +13,7 @@ export interface Project {
     featured: boolean;
     githubUrl?: string;
     websiteUrl?: string;
-    keyFeatures?: string[];
+    keykeyFeatures?: string[];
     challenges?: string[];
 }
 
@@ -22,7 +22,7 @@ export const projects: Project[] = [
         title: "SEIMS",
         description: "A comprehensive system for managing sports equipment inventory and distribution",
         overview: "SEIMS is a comprehensive system designed to streamline the management of sports equipment inventory and distribution. It provides a user-friendly interface for both administrators and users to manage equipment efficiently.",
-        features: [
+        keyFeatures: [
             "Inventory management",
             "Distribution management",
             "User authentication",
@@ -53,7 +53,7 @@ export const projects: Project[] = [
         title: "Ecommerce Website",
         description: "A comprehensive platform for students to apply to Colleges and Universities in Nepal",
         overview: "A modern e-commerce platform built with Next.js and TypeScript, featuring a responsive design, secure payment processing, and comprehensive product management capabilities.",
-        features: [
+        keyFeatures: [
             "Product catalog management",
             "Shopping cart functionality",
             "Secure payment processing",
@@ -86,7 +86,7 @@ export const projects: Project[] = [
         title: "Restaurant Website",
         description: "A modern website for a Nepalese & Indian cuisine restaurant featuring online ordering and reservation.",
         overview: "A comprehensive restaurant website that showcases the restaurant's menu, allows online ordering, and provides a seamless reservation system for customers.",
-        features: [
+        keyFeatures: [
             "Online menu display",
             "Online ordering system",
             "Table reservation",
@@ -115,7 +115,7 @@ export const projects: Project[] = [
         title: "FourleafClover Website",
         description: "A modern, responsive, and visually engaging web application designed to showcase the brand's identity.",
         overview: "A professional website for FourleafClover that effectively communicates the brand's message and showcases its services through an engaging user interface.",
-        features: [
+        keyFeatures: [
             "Brand showcase",
             "Service presentation",
             "Portfolio display",
