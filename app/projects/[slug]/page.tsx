@@ -19,8 +19,9 @@ export function generateStaticParams() {
     }));
 }
 
-export default function ProjectPage({ params }: Props) {
-    const project = projects.find((p) => p.slug === params.slug);
+export default async function ProjectPage({ params }: Props) {
+    const { slug } = await params;
+    const project = projects.find((p) => p.slug === slug);
 
     if (!project) {
         notFound();
@@ -33,10 +34,10 @@ export default function ProjectPage({ params }: Props) {
                 <ProjectContent
                     title={project.title}
                     overview={project.longDescription || project.description}
-                    features={project.keyFeatures || []}
+                    keyFeatures={project.keyFeatures || []}
                     technologies={project.technologies}
-                    impact={project.challenges?.join('. ') || ''}
-                    images={[{ src: project.image, alt: project.title }]}
+                    impact={project.description || ''}
+                    images={project.images.map((img: string, i: number) => ({ src: img, alt: `${project.title} image ${i + 1}` }))}
                     githubUrl={project.githubUrl}
                     websiteUrl={project.websiteUrl}
                 />

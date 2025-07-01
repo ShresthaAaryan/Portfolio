@@ -12,12 +12,12 @@ export default function ProjectPageContent({ project }: ProjectPageContentProps)
         <ProjectContent
             title={project.title}
             overview={project.longDescription || project.description}
-            features={project.keyFeatures || []}
+            keyFeatures={project.keyFeatures || []}
             technologies={project.technologies}
-            impact={project.challenges?.join('. ') || ''}
             images={[{ src: project.image, alt: project.title }]}
             githubUrl={project.githubUrl}
             websiteUrl={project.websiteUrl}
+            impact={project.impact || ''}
         />
     );
 } 

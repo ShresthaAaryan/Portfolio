@@ -2,14 +2,15 @@ export interface Project {
     title: string;
     description: string;
     image: string;
+    images: string[];
     technologies: string[];
     slug: string;
     githubUrl?: string;
     websiteUrl?: string;
     longDescription?: string;
-    challenges?: string[];
     solutions?: string[];
     keyFeatures?: string[];
+    impact?: string;
 }
 
 export const projects: Project[] = [
@@ -17,6 +18,17 @@ export const projects: Project[] = [
         title: "E-commerce Platform",
         description: "A modern and scalable e-commerce solution",
         image: "/images/ecommerce1.png",
+        images: [
+            "/images/ecommerce1.png",
+            "/images/ecommerce2.png",
+            "/images/ecommerce3.png",
+            "/images/ecommerce4.png",
+            "/images/ecommerce5.png",
+            "/images/ecommerce6.png",
+            "/images/ecommerce7.png",
+            "/images/ecommerce8.png",
+            "/images/ecommerce9.png",
+        ],
         technologies: [
             "Frontend: Next.js with TypeScript",
             "Backend: Node.js with Express",
@@ -37,12 +49,20 @@ export const projects: Project[] = [
             "Responsive design",
             "SEO friendly Website"
         ],
-        challenges: ["The e-commerce platform has enabled businesses to establish a strong online presence, resulting in increased sales and improved customer satisfaction. The platform's scalability and performance have made it a reliable solution for businesses of all sizes."]
+        impact: "Enabled businesses to establish a strong online presence, resulting in increased sales and improved customer satisfaction."
     },
     {
         title: "Fourleaf Clover Pvt. Ltd.",
         description: "A modern webpage for a marketing company",
         image: "/images/fourleaf1.png",
+        images: [
+            "/images/fourleaf1.png",
+            "/images/fourleaf2.png",
+            "/images/fourleaf3.png",
+            "/images/fourleaf4.png",
+            "/images/fourleaf5.png",
+            "/images/fourleaf6.png"
+        ],
         technologies: [
             "Frontend: Next.js",
             "Backend: Node.js with Express",
@@ -58,12 +78,19 @@ export const projects: Project[] = [
             "Information about the Company",
             "Contact Form"
         ],
-        challenges: ["Fourleaf has empowered businesses to make informed marketing decisions through comprehensive analytics and campaign management tools. The platform has helped numerous companies improve their digital marketing ROI and online presence."]
+        impact: "Empowered businesses to make informed marketing decisions and improve their digital marketing ROI."
     },
     {
         title: "Ghumti Kitchen",
         description: "A modern website for a Nepalese Restaurant in Sydney",
         image: "/images/ghumti1.png",
+        images: [
+            "/images/ghumti1.png",
+            "/images/ghumti2.png",
+            "/images/ghumti3.png",
+            "/images/ghumti4.png",
+            "/images/ghumti5.png"
+        ],
         technologies: [
             "Frontend: React js",
             "Backend: Node.js with Express",
@@ -79,12 +106,20 @@ export const projects: Project[] = [
             "Information about the place",
             "Booking system"
         ],
-        challenges: ["Ghumti has revolutionized the way travelers plan their trips, providing a seamless experience from discovery to booking. The platform has helped numerous users find their perfect travel destinations and create memorable experiences."]
+        impact: "Revolutionized the way travelers plan their trips, providing a seamless experience from discovery to booking."
     },
     {
         title: "SEIMS - Sports Equipment Inventory Management System",
         description: "A comprehensive system for managing student examination information and results",
         image: "/images/seims1.png",
+        images: [
+            "/images/seims1.png",
+            "/images/seims2.png",
+            "/images/seims3.png",
+            "/images/seims4.png",
+            "/images/seims5.png",
+            "/images/seims6.png"
+        ],
         technologies: [
             "Frontend: React.js with TypeScript",
             "Backend: Supabase",
@@ -103,6 +138,6 @@ export const projects: Project[] = [
             "Responsive design",
             "SEO friendly Website"
         ],
-        challenges: ["SEIMS has significantly improved the efficiency of sports equipment inventory management, reduced manual errors, and provided better accessibility to sports equipment for both students and administrators."]
+        impact: "Significantly improved the efficiency of sports equipment inventory management and accessibility for students and administrators."
     }
 ]; 

@@ -14,23 +14,23 @@ interface ProjectImage {
 interface ProjectContentProps {
     title: string;
     overview: string;
-    features: string[];
+    keyFeatures: string[];
     technologies: string[];
-    impact: string;
     images?: ProjectImage[];
     githubUrl?: string;
     websiteUrl?: string;
+    impact?: string;
 }
 
 export default function ProjectContent({
     title,
     overview,
-    features,
+    keyFeatures = [],
     technologies,
-    impact,
     images = [],
     githubUrl,
-    websiteUrl
+    websiteUrl,
+    impact = ''
 }: ProjectContentProps) {
     const [currentImageIndex, setCurrentImageIndex] = useState(0);
     const [isLightboxOpen, setIsLightboxOpen] = useState(false);
@@ -142,13 +142,13 @@ export default function ProjectContent({
                             {/* Navigation Buttons */}
                             <button
                                 onClick={(e) => prevImage(e)}
-                                className="absolute left-6 top-1/2 -translate-y-1/2 bg-white/90 hover:bg-white text-gray-900 p-3 rounded-full shadow-xl transition-all duration-300 hover:scale-110"
+                                className="absolute left-6 top-1/2 -translate-y-1/2 bg-black hover:bg-gray-900 text-white p-3 rounded-full shadow-xl transition-all duration-300 hover:scale-110"
                             >
                                 ←
                             </button>
                             <button
                                 onClick={(e) => nextImage(e)}
-                                className="absolute right-6 top-1/2 -translate-y-1/2 bg-white/90 hover:bg-white text-gray-900 p-3 rounded-full shadow-xl transition-all duration-300 hover:scale-110"
+                                className="absolute right-6 top-1/2 -translate-y-1/2 bg-black hover:bg-gray-900 text-white p-3 rounded-full shadow-xl transition-all duration-300 hover:scale-110"
                             >
                                 →
                             </button>
@@ -223,65 +223,55 @@ export default function ProjectContent({
                         )}
                     </AnimatePresence>
 
-                    <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-6xl mx-auto">
+                    <div className="grid grid-cols-1 md:grid-cols-2 gap-10 max-w-6xl mx-auto mt-14">
                         <motion.div
                             initial={{ opacity: 0, x: -20 }}
                             animate={{ opacity: 1, x: 0 }}
                             transition={{ duration: 0.5, delay: 0.3 }}
-                            className="space-y-8"
+                            className="backdrop-blur-xl bg-white/60 dark:bg-gray-900/70 border border-gray-200/40 dark:border-gray-800/60 p-12 rounded-3xl shadow-2xl hover:shadow-3xl transition-all duration-500 group relative overflow-hidden"
                         >
-                            <section className="bg-white dark:bg-gray-800 p-8 rounded-2xl shadow-xl hover:shadow-2xl transition-all duration-300">
-                                <h2 className="text-2xl font-semibold mb-6 bg-clip-text text-transparent bg-gradient-to-r from-gray-900 to-gray-600 dark:from-white dark:to-gray-300">
+                            <div className="absolute inset-0 pointer-events-none rounded-3xl bg-gradient-to-br from-blue-100/40 via-transparent to-blue-400/10 dark:from-blue-900/30 dark:to-blue-700/10 z-0" />
+                            <div className="relative z-10">
+                                <h2 className="text-3xl font-bold mb-8 bg-clip-text text-transparent bg-gradient-to-r from-blue-700 via-blue-400 to-blue-600 dark:from-blue-300 dark:to-blue-500 tracking-tight">
                                     Project Overview
                                 </h2>
-                                <p className="text-gray-600 dark:text-gray-300 leading-relaxed">
+                                <p className="text-gray-800 dark:text-gray-200 leading-relaxed mb-10 text-lg font-medium">
                                     {overview}
                                 </p>
-                            </section>
-
-                            <section className="bg-white dark:bg-gray-800 p-8 rounded-2xl shadow-xl hover:shadow-2xl transition-all duration-300">
-                                <h2 className="text-2xl font-semibold mb-6 bg-clip-text text-transparent bg-gradient-to-r from-gray-900 to-gray-600 dark:from-white dark:to-gray-300">
+                                <h2 className="text-3xl font-bold mb-8 bg-clip-text text-transparent bg-gradient-to-r from-blue-700 via-blue-400 to-blue-600 dark:from-blue-300 dark:to-blue-500 tracking-tight">
                                     Key Features
                                 </h2>
-                                <ul className="space-y-4 text-gray-600 dark:text-gray-300">
-                                    {features.map((feature, index) => (
-                                        <li key={index} className="flex items-start gap-3">
-                                            <span className="text-blue-600 dark:text-blue-400 mt-1">•</span>
-                                            <span className="leading-relaxed">{feature}</span>
+                                <ul className="space-y-5 text-gray-800 dark:text-gray-200 text-base">
+                                    {keyFeatures.map((feature, index) => (
+                                        <li key={index} className="flex items-start gap-4">
+                                            <span className="text-blue-500 dark:text-blue-400 mt-1 text-xl">•</span>
+                                            <span className="leading-relaxed font-medium">{feature}</span>
                                         </li>
                                     ))}
                                 </ul>
-                            </section>
+                            </div>
                         </motion.div>
 
                         <motion.div
                             initial={{ opacity: 0, x: 20 }}
                             animate={{ opacity: 1, x: 0 }}
                             transition={{ duration: 0.5, delay: 0.3 }}
-                            className="space-y-8"
+                            className="backdrop-blur-xl bg-white/60 dark:bg-gray-900/70 border border-gray-200/40 dark:border-gray-800/60 p-12 rounded-3xl shadow-2xl hover:shadow-3xl transition-all duration-500 group relative overflow-hidden"
                         >
-                            <section className="bg-white dark:bg-gray-800 p-8 rounded-2xl shadow-xl hover:shadow-2xl transition-all duration-300">
-                                <h2 className="text-2xl font-semibold mb-6 bg-clip-text text-transparent bg-gradient-to-r from-gray-900 to-gray-600 dark:from-white dark:to-gray-300">
+                            <div className="absolute inset-0 pointer-events-none rounded-3xl bg-gradient-to-br from-blue-100/40 via-transparent to-blue-400/10 dark:from-blue-900/30 dark:to-blue-700/10 z-0" />
+                            <div className="relative z-10">
+                                <h2 className="text-3xl font-bold mb-8 bg-clip-text text-transparent bg-gradient-to-r from-blue-700 via-blue-400 to-blue-600 dark:from-blue-300 dark:to-blue-500 tracking-tight">
                                     Technologies Used
                                 </h2>
-                                <ul className="space-y-4 text-gray-600 dark:text-gray-300">
+                                <ul className="space-y-5 text-gray-800 dark:text-gray-200 text-base">
                                     {technologies.map((tech, index) => (
-                                        <li key={index} className="flex items-start gap-3">
-                                            <span className="text-blue-600 dark:text-blue-400 mt-1">•</span>
-                                            <span className="leading-relaxed">{tech}</span>
+                                        <li key={index} className="flex items-start gap-4">
+                                            <span className="text-blue-500 dark:text-blue-400 mt-1 text-xl">•</span>
+                                            <span className="leading-relaxed font-medium">{tech}</span>
                                         </li>
                                     ))}
                                 </ul>
-                            </section>
-
-                            <section className="bg-white dark:bg-gray-800 p-8 rounded-2xl shadow-xl hover:shadow-2xl transition-all duration-300">
-                                <h2 className="text-2xl font-semibold mb-6 bg-clip-text text-transparent bg-gradient-to-r from-gray-900 to-gray-600 dark:from-white dark:to-gray-300">
-                                    Project Impact
-                                </h2>
-                                <p className="text-gray-600 dark:text-gray-300 leading-relaxed">
-                                    {impact}
-                                </p>
-                            </section>
+                            </div>
                         </motion.div>
                     </div>
                 </div>
