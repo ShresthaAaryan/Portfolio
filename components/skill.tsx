@@ -26,7 +26,6 @@ const skills = [
         skills: [
             { name: "Express", category: "Backend" as SkillCategory },
             { name: "Django", category: "Backend" as SkillCategory },
-            { name: "Firebase", category: "Backend" as SkillCategory },
             { name: "MongoDB", category: "Database" as SkillCategory },
             { name: "PostgreSQL", category: "Database" as SkillCategory }
         ]

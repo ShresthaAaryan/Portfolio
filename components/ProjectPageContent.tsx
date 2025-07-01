@@ -1,7 +1,7 @@
 'use client';
 
 import ProjectContent from '@/components/ProjectContent';
-import { Project } from '@/data/projects';
+import { Project } from '@/lib/projects';
 
 interface ProjectPageContentProps {
     project: Project;
@@ -57,7 +57,7 @@ export default function ProjectPageContent({ project }: ProjectPageContentProps)
         <ProjectContent
             title={project.title}
             overview={project.longDescription || project.description}
-            features={project.keyFeatures || []}
+            keyFeatures={project.keyFeatures || []}
             technologies={project.technologies}
             impact={project.challenges?.join('. ') || ''}
             images={getProjectImages(project.slug)}

@@ -51,7 +51,6 @@ const Footer = () => {
               <li className="text-gray-400">Web Development</li>
               <li className="text-gray-400">API Integration</li>
               <li className="text-gray-400">Full Stack Development</li>
-              <li className="text-gray-400">Consulting</li>
             </ul>
           </div>
 
@@ -60,10 +59,10 @@ const Footer = () => {
             <h4 className="text-lg font-medium mb-4">Get in Touch</h4>
             <div className="space-y-4">
               <p className="text-gray-400">Kathmandu, Nepal</p>
-              <p className="text-gray-400">contact@aaryanshrestha.com</p>
+              <p className="text-gray-400">shresthaaaryan@gmail.com</p>
               <div className="flex space-x-4">
                 <a
-                  href="https://github.com/yourusername"
+                  href="https://github.com/ShresthaAaryan"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="text-gray-400 hover:text-white transition-colors"
@@ -71,7 +70,7 @@ const Footer = () => {
                   <Github className="w-5 h-5" />
                 </a>
                 <a
-                  href="https://linkedin.com/in/yourusername"
+                  href="https://linkedin.com/in/aaryanshrestha"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="text-gray-400 hover:text-white transition-colors"
@@ -79,15 +78,7 @@ const Footer = () => {
                   <Linkedin className="w-5 h-5" />
                 </a>
                 <a
-                  href="https://twitter.com/yourusername"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="text-gray-400 hover:text-white transition-colors"
-                >
-                  <Twitter className="w-5 h-5" />
-                </a>
-                <a
-                  href="mailto:contact@aaryanshrestha.com"
+                  href="mailto:shresthaaaryan@gmail.com"
                   className="text-gray-400 hover:text-white transition-colors"
                 >
                   <Mail className="w-5 h-5" />
@@ -99,18 +90,10 @@ const Footer = () => {
 
         {/* Bottom Bar */}
         <div className="border-t border-gray-800 mt-12 pt-8">
-          <div className="flex flex-col md:flex-row justify-between items-center">
+          <div className="flex flex-col md:flex-row text-center justify-center items-center">
             <p className="text-gray-400 text-sm">
               © {new Date().getFullYear()} Aaryan Shrestha. All rights reserved.
             </p>
-            <div className="flex space-x-6 mt-4 md:mt-0">
-              <Link href="/privacy" className="text-gray-400 hover:text-white text-sm transition-colors">
-                Privacy Policy
-              </Link>
-              <Link href="/terms" className="text-gray-400 hover:text-white text-sm transition-colors">
-                Terms of Service
-              </Link>
-            </div>
           </div>
         </div>
       </div>

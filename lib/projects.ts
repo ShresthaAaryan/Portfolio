@@ -13,7 +13,6 @@ export interface Project {
     featured: boolean;
     githubUrl?: string;
     websiteUrl?: string;
-    keykeyFeatures?: string[];
     challenges?: string[];
 }
 
@@ -44,7 +43,6 @@ export const projects: Project[] = [
             "/images/seims6.png"
         ],
         githubUrl: "https://github.com/ShresthaAaryan/Sports-Equipment-Inventory-Managemement-System",
-        websiteUrl: "/project/seims",
         slug: "seims",
         category: "Sports",
         featured: true
@@ -76,8 +74,7 @@ export const projects: Project[] = [
             "/images/ecommerce8.png",
             "/images/ecommerce9.png"
         ],
-        githubUrl: "https://github.com/yourusername/ecommerce",
-        websiteUrl: "/project/ecommerce",
+        githubUrl: "https://github.com/ShresthaAaryan/Ecommerce-App",
         slug: "ecommerce",
         category: "E-commerce",
         featured: true
@@ -105,8 +102,7 @@ export const projects: Project[] = [
             "/images/ghumti4.png",
             "/images/ghumti5.png"
         ],
-        githubUrl: "https://github.com/yourusername/restaurant",
-        websiteUrl: "/project/ghumti",
+        websiteUrl: "https://ghumti.au/",
         slug: "ghumti",
         category: "Restaurant",
         featured: true
@@ -135,8 +131,7 @@ export const projects: Project[] = [
             "/images/fourleaf5.png",
             "/images/fourleaf6.png"
         ],
-        githubUrl: "https://github.com/yourusername/fourleaf",
-        websiteUrl: "/project/fourleaf",
+        websiteUrl: "https://fourleaf-website.vercel.app/",
         slug: "fourleaf",
         category: "Brand",
         featured: true

@@ -6,7 +6,7 @@ import Hero from '@/components/Hero';
 import { projects } from "@/lib/projects";
 import ProjectCard from "@/components/ProjectCard";
 import { useState } from 'react';
-import { Search, Filter, Code2, Users, Star, Clock } from 'lucide-react';
+import { Search, Code2, Users, Star } from 'lucide-react';
 
 export default function Projects() {
     const [searchQuery, setSearchQuery] = useState('');
@@ -25,7 +25,6 @@ export default function Projects() {
 
     // Calculate statistics
     const totalProjects = projects.length;
-    const totalTechnologies = Array.from(new Set(projects.flatMap(p => p.technologies))).length;
     const featuredProjects = projects.filter(p => p.featured).length;
 
     return (
@@ -46,26 +45,23 @@ export default function Projects() {
             {/* Project Statistics */}
             <section className="py-12 bg-background/50">
                 <div className="container mx-auto px-4">
-                    <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
-                        <div className="bg-white dark:bg-black/20 p-6 rounded-xl text-center">
-                            <Code2 className="w-8 h-8 mx-auto mb-2 text-accent-color" />
-                            <h3 className="text-2xl font-semibold mb-1">{totalProjects}</h3>
-                            <p className="text-gray-600 dark:text-gray-400">Total Projects</p>
-                        </div>
-                        <div className="bg-white dark:bg-black/20 p-6 rounded-xl text-center">
-                            <Star className="w-8 h-8 mx-auto mb-2 text-accent-color" />
-                            <h3 className="text-2xl font-semibold mb-1">{featuredProjects}</h3>
-                            <p className="text-gray-600 dark:text-gray-400">Featured Projects</p>
-                        </div>
-                        <div className="bg-white dark:bg-black/20 p-6 rounded-xl text-center">
-                            <Users className="w-8 h-8 mx-auto mb-2 text-accent-color" />
-                            <h3 className="text-2xl font-semibold mb-1">100%</h3>
-                            <p className="text-gray-600 dark:text-gray-400">Client Satisfaction</p>
-                        </div>
-                        <div className="bg-white dark:bg-black/20 p-6 rounded-xl text-center">
-                            <Clock className="w-8 h-8 mx-auto mb-2 text-accent-color" />
-                            <h3 className="text-2xl font-semibold mb-1">{totalTechnologies}</h3>
-                            <p className="text-gray-600 dark:text-gray-400">Technologies Used</p>
+                    <div className="flex flex-col items-center">
+                        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 w-full max-w-3xl">
+                            <div className="bg-white dark:bg-black/20 p-6 rounded-xl text-center flex flex-col items-center">
+                                <Code2 className="w-8 h-8 mb-2 text-accent-color" />
+                                <h3 className="text-2xl font-semibold mb-1">{totalProjects}</h3>
+                                <p className="text-gray-600 dark:text-gray-400">Total Projects</p>
+                            </div>
+                            <div className="bg-white dark:bg-black/20 p-6 rounded-xl text-center flex flex-col items-center">
+                                <Star className="w-8 h-8 mb-2 text-accent-color" />
+                                <h3 className="text-2xl font-semibold mb-1">{featuredProjects}</h3>
+                                <p className="text-gray-600 dark:text-gray-400">Featured Projects</p>
+                            </div>
+                            <div className="bg-white dark:bg-black/20 p-6 rounded-xl text-center flex flex-col items-center">
+                                <Users className="w-8 h-8 mb-2 text-accent-color" />
+                                <h3 className="text-2xl font-semibold mb-1">100%</h3>
+                                <p className="text-gray-600 dark:text-gray-400">Client Satisfaction</p>
+                            </div>
                         </div>
                     </div>
                 </div>

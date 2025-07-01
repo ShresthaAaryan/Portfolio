@@ -85,35 +85,37 @@ export default function ProjectContent({
                             </Link>
                         </div>
 
-                        <div className="flex items-center gap-4">
-                            {githubUrl && (
-                                <motion.a
-                                    href={githubUrl}
-                                    target="_blank"
-                                    rel="noopener noreferrer"
-                                    className="flex items-center gap-2 bg-gray-900 hover:bg-gray-800 dark:bg-white dark:hover:bg-gray-100 text-white dark:text-gray-900 px-6 py-3 rounded-lg transition-all duration-300 shadow-lg hover:shadow-xl"
-                                    whileHover={{ scale: 1.02 }}
-                                    whileTap={{ scale: 0.98 }}
-                                >
-                                    <Github size={20} />
-                                    <span className="font-medium">GitHub</span>
-                                </motion.a>
-                            )}
+                        {(githubUrl || websiteUrl) && (
+                            <div className="flex items-center gap-4">
+                                {githubUrl && (
+                                    <motion.a
+                                        href={githubUrl}
+                                        target="_blank"
+                                        rel="noopener noreferrer"
+                                        className="flex items-center gap-2 bg-gray-900 hover:bg-gray-800 dark:bg-white dark:hover:bg-gray-100 text-white dark:text-gray-900 px-6 py-3 rounded-lg transition-all duration-300 shadow-lg hover:shadow-xl"
+                                        whileHover={{ scale: 1.02 }}
+                                        whileTap={{ scale: 0.98 }}
+                                    >
+                                        <Github size={20} />
+                                        <span className="font-medium">GitHub</span>
+                                    </motion.a>
+                                )}
 
-                            {websiteUrl && (
-                                <motion.a
-                                    href={websiteUrl}
-                                    target="_blank"
-                                    rel="noopener noreferrer"
-                                    className="flex items-center gap-2 bg-blue-600 hover:bg-blue-700 text-white px-6 py-3 rounded-lg transition-all duration-300 shadow-lg hover:shadow-xl"
-                                    whileHover={{ scale: 1.02 }}
-                                    whileTap={{ scale: 0.98 }}
-                                >
-                                    <Globe size={20} />
-                                    <span className="font-medium">Live Demo</span>
-                                </motion.a>
-                            )}
-                        </div>
+                                {websiteUrl && (
+                                    <motion.a
+                                        href={websiteUrl}
+                                        target="_blank"
+                                        rel="noopener noreferrer"
+                                        className="flex items-center gap-2 bg-blue-600 hover:bg-blue-700 text-white px-6 py-3 rounded-lg transition-all duration-300 shadow-lg hover:shadow-xl"
+                                        whileHover={{ scale: 1.02 }}
+                                        whileTap={{ scale: 0.98 }}
+                                    >
+                                        <Globe size={20} />
+                                        <span className="font-medium">Live Demo</span>
+                                    </motion.a>
+                                )}
+                            </div>
+                        )}
                     </motion.div>
 
                     {/* Images Carousel */}
@@ -249,7 +251,7 @@ export default function ProjectContent({
                                         </li>
                                     ))}
                                 </ul>
-                                
+
                             </div>
                         </motion.div>
 
