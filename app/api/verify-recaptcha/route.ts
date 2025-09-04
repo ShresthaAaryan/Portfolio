@@ -33,5 +33,3 @@ export async function POST(request: Request) {
         return NextResponse.json({ success: false, error: 'Unexpected error' }, { status: 500 });
     }
 }
-
-
