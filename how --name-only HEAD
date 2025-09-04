@@ -1,0 +1,5 @@
+[33m3500d5f[m[33m ([m[1;36mHEAD[m[33m -> [m[1;32mmain[m[33m, [m[1;31morigin/main[m[33m, [m[1;31morigin/HEAD[m[33m)[m Fix reCAPTCHA error handling to prevent JSON parsing errors
+[33ma68e8ec[m Add reCAPTCHA v3 API route for server-side verification
+[33m2746245[m feat: recaptcha v3 added
+[33m2555953[m update
+[33mf7f9c3b[m update

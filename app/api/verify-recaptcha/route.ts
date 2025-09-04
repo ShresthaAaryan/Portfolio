@@ -1,5 +1,6 @@
 import { NextResponse } from 'next/server';
 
+// reCAPTCHA verification endpoint
 export async function POST(request: Request) {
     try {
         const { token } = await request.json();

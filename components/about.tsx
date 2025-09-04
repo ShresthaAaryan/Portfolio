@@ -43,7 +43,7 @@ const About = () => {
 
                             <div className="space-y-8">
                                 <p className="body-text text-[#4A4A4A] dark:text-[#CCCCCC] leading-relaxed px-4 md:px-0">
-                                    A passionate Full Stack Developer and Computer Science student at Vellore Institute of Technology, specializing in modern web technologies and microservices architecture. With expertise in the MERN stack, TypeScript, and Next.js, I've developed robust e-commerce platforms and inventory management systems. Currently interning at WhovianSoft Pvt. Ltd. My academic excellence (CGPA: 8.61) is complemented by practical experience in building Robust applications and implementing secure authentication mechanisms.
+                                   Full Stack Developer and Computer Science and Engineering student at Vellore Institute of Technology (CGPA: 8.61), with hands-on experience in building scalable web applications and microservices architecture. Skilled in the MERN stack, Django, TypeScript, and Next.js. Completed internships at WhovianSoft Pvt. Ltd. and SoftCrunch Pvt. Ltd., where I contributed to full-stack development, secure authentication, system optimization, and cloud deployment on AWS. Passionate about developing robust, user-focused applications with modern technologies.
                                 </p>
 
                                 {/* Key Achievements */}
@@ -65,10 +65,6 @@ const About = () => {
                                             <span className="text-accent-color">•</span>
                                             <span className='text-start'>Maintaining 8.61 CGPA at VIT in Computer Science Engineering</span>
                                         </li>
-                                        {/* <li className="flex items-start gap-2">
-                                            <span className="text-accent-color">•</span>
-                                            <span className='text-start'>Completed The Complete 2024 Web Development Bootcamp by Dr. Angela Yu</span>
-                                        </li> */}
                                     </ul>
                                 </div>
 
