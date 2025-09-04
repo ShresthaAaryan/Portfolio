@@ -52,8 +52,12 @@ export default function ContactForm() {
                 body: JSON.stringify({ token }),
             });
 
+            if (!verifyRes.ok) {
+                throw new Error(`reCAPTCHA verification failed: ${verifyRes.status}`);
+            }
+
             const verifyData = await verifyRes.json();
-            if (!verifyRes.ok || !verifyData.success) {
+            if (!verifyData.success) {
                 throw new Error('reCAPTCHA verification failed');
             }
 
