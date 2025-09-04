@@ -5,6 +5,15 @@ import { motion } from 'framer-motion';
 import { Send, Loader2 } from 'lucide-react';
 import emailjs from '@emailjs/browser';
 
+declare global {
+    interface Window {
+        grecaptcha?: {
+            ready: (cb: () => void) => void;
+            execute: (siteKey: string, options: { action: string }) => Promise<string>;
+        };
+    }
+}
+
 export default function ContactForm() {
     useEffect(() => {
         emailjs.init('m-oeHcMgUspNGUK7k');
@@ -25,6 +34,29 @@ export default function ContactForm() {
         setSubmitStatus('idle');
 
         try {
+            const siteKey = process.env.NEXT_PUBLIC_RECAPTCHA_SITE_KEY;
+            if (!siteKey) {
+                throw new Error('reCAPTCHA site key missing');
+            }
+
+            if (!window.grecaptcha) {
+                throw new Error('reCAPTCHA not loaded');
+            }
+
+            await new Promise<void>((resolve) => window.grecaptcha!.ready(() => resolve()));
+            const token = await window.grecaptcha!.execute(siteKey, { action: 'contact_submit' });
+
+            const verifyRes = await fetch('/api/verify-recaptcha', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({ token }),
+            });
+
+            const verifyData = await verifyRes.json();
+            if (!verifyRes.ok || !verifyData.success) {
+                throw new Error('reCAPTCHA verification failed');
+            }
+
             const templateParams = {
                 from_name: formData.name,
                 from_email: formData.email,
